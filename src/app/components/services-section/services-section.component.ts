@@ -1,8 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { trigger, transition, style, animate } from '@angular/animations';
 import { LucideAngularModule } from 'lucide-angular';
-import { AnimateInViewDirective } from '../../directives/animate-in-view.directive';
 
 const services = [
   {
@@ -46,31 +44,12 @@ const services = [
 @Component({
   selector: 'app-services-section',
   standalone: true,
-  imports: [CommonModule, LucideAngularModule, AnimateInViewDirective],
+  imports: [CommonModule, LucideAngularModule],
   templateUrl: './services-section.component.html',
   styleUrl: './services-section.component.scss',
-  animations: [
-    trigger('fadeUp', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(30px)' }),
-        animate('800ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })),
-      ]),
-    ]),
-    trigger('cardUp', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(40px)' }),
-        animate('600ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })),
-      ]),
-    ]),
-  ],
 })
 export class ServicesSectionComponent {
   services = services;
-  inView = signal(false);
-
-  onInView(visible: boolean) {
-    this.inView.set(visible);
-  }
 
   getServiceIconName(s: (typeof services)[number]) {
     return s.icon;

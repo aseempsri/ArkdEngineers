@@ -1,8 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { trigger, transition, style, animate } from '@angular/animations';
 import { LucideAngularModule } from 'lucide-angular';
-import { AnimateInViewDirective } from '../../directives/animate-in-view.directive';
 
 const solutions = [
   {
@@ -28,31 +26,12 @@ const solutions = [
 @Component({
   selector: 'app-solutions-section',
   standalone: true,
-  imports: [CommonModule, LucideAngularModule, AnimateInViewDirective],
+  imports: [CommonModule, LucideAngularModule],
   templateUrl: './solutions-section.component.html',
   styleUrl: './solutions-section.component.scss',
-  animations: [
-    trigger('fadeUp', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(30px)' }),
-        animate('800ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })),
-      ]),
-    ]),
-    trigger('cardUp', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(40px)' }),
-        animate('700ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })),
-      ]),
-    ]),
-  ],
 })
 export class SolutionsSectionComponent {
   solutions = solutions;
-  inView = signal(false);
-
-  onInView(visible: boolean) {
-    this.inView.set(visible);
-  }
 
   getSolutionIconName(s: (typeof solutions)[number]) {
     return s.icon;
