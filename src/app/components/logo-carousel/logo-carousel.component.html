@@ -1,0 +1,56 @@
+<div class="logo-carousel-wrapper">
+  <div class="carousel-mask carousel-mask-left"></div>
+  <div class="carousel-mask carousel-mask-right"></div>
+
+  <!-- Track 1: Scrolls left -->
+  <div class="carousel-track">
+    <div class="carousel-slider">
+    <div class="carousel-inner">
+      @for (item of items; track item.name) {
+        <div class="logo-card">
+          <div class="logo-fallback">
+            <span class="logo-initials">{{ getInitials(item.name) }}</span>
+            <span class="logo-name">{{ item.name }}</span>
+          </div>
+        </div>
+      }
+    </div>
+    <div class="carousel-inner" aria-hidden="true">
+      @for (item of items; track item.name) {
+        <div class="logo-card">
+          <div class="logo-fallback">
+            <span class="logo-initials">{{ getInitials(item.name) }}</span>
+            <span class="logo-name">{{ item.name }}</span>
+          </div>
+        </div>
+      }
+    </div>
+    </div>
+  </div>
+
+  <!-- Track 2: Scrolls right -->
+  <div class="carousel-track track-reverse">
+    <div class="carousel-slider">
+    <div class="carousel-inner">
+      @for (item of items; track item.name) {
+        <div class="logo-card card-alt">
+          <div class="logo-fallback">
+            <span class="logo-initials">{{ getInitials(item.name) }}</span>
+            <span class="logo-name">{{ item.name }}</span>
+          </div>
+        </div>
+      }
+    </div>
+    <div class="carousel-inner" aria-hidden="true">
+      @for (item of items; track item.name) {
+        <div class="logo-card card-alt">
+          <div class="logo-fallback">
+            <span class="logo-initials">{{ getInitials(item.name) }}</span>
+            <span class="logo-name">{{ item.name }}</span>
+          </div>
+        </div>
+      }
+    </div>
+    </div>
+  </div>
+</div>

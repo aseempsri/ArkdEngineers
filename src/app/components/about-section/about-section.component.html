@@ -1,48 +1,36 @@
 <section id="about" class="relative py-32 overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" appAnimateInView [margin]="'-100px'" (inView)="onInView($event)">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-16 items-center">
       <!-- Left -->
       <div>
-        @if (inView()) {
-          <div @slideInLeft>
-            <span class="text-xs font-bold tracking-[0.3em] uppercase text-accent mb-4 block" style="font-family: 'Orbitron', sans-serif">
-              About Us
-            </span>
-            <h2 class="text-3xl sm:text-5xl font-black mb-6 leading-tight">
-              Engineering the
-              <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Future of Security
-              </span>
-            </h2>
-            <p class="text-muted-foreground leading-relaxed mb-6" style="font-family: 'Inter', sans-serif">
-              ARKD Engineers is a renowned enterprise specializing in pioneering CCTV,
-              biometric recognition techniques, and providing products and solutions for
-              smart entrance management, smart identity authentication, and smart office systems.
-            </p>
-            <p class="text-muted-foreground leading-relaxed" style="font-family: 'Inter', sans-serif">
-              We offer services on all fronts to public-service, enterprise-level, and personal
-              users — delivering cutting-edge technology that protects, monitors, and optimizes
-              every environment.
-            </p>
-          </div>
-        }
+        <span class="text-xs font-bold tracking-[0.3em] uppercase text-accent mb-4 block" style="font-family: 'Orbitron', sans-serif">
+          About Us
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-black mb-6 leading-tight">
+          Engineering the
+          <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            Future of Security
+          </span>
+        </h2>
+        <p class="text-muted-foreground leading-relaxed mb-6" style="font-family: 'Inter', sans-serif">
+          Established in 2013, ARKD Engineers is a Pune-based integrated one-stop solution company fulfilling all proactive security requirements across residential, commercial, government, and corporate environments.
+        </p>
+        <p class="text-muted-foreground leading-relaxed" style="font-family: 'Inter', sans-serif">
+          We provide end-to-end services including system design, supply, installation, and maintenance — specializing in CCTV surveillance, access control, fire safety, intrusion detection, and smart automation systems.
+        </p>
       </div>
 
       <!-- Right - Stats Grid -->
       <div class="grid grid-cols-2 gap-4">
-        @for (stat of stats; track stat.value; let i = $index) {
-          @if (inView()) {
-            <div
-              [@slideUp]
-              class="p-6 rounded-2xl border border-border bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all group hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
-              >
-              <lucide-icon [name]="getStatIconName(stat)" class="w-8 h-8 text-accent mb-4 group-hover:scale-110 transition-transform block" [size]="32"></lucide-icon>
-              <div class="text-xl font-bold text-foreground mb-1" style="font-family: 'Orbitron', sans-serif">
-                {{ stat.value }}
-              </div>
-              <div class="text-sm text-muted-foreground">{{ stat.label }}</div>
+        @for (stat of stats; track stat.value) {
+          <div
+            class="p-6 rounded-2xl border border-border bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all group hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
+            <lucide-icon [name]="getStatIconName(stat)" class="w-8 h-8 text-accent mb-4 group-hover:scale-110 transition-transform block" [size]="32"></lucide-icon>
+            <div class="text-xl font-bold text-foreground mb-1" style="font-family: 'Orbitron', sans-serif">
+              {{ stat.value }}
             </div>
-          }
+            <div class="text-sm text-muted-foreground">{{ stat.label }}</div>
+          </div>
         }
       </div>
     </div>

@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { LucideAngularModule } from 'lucide-angular';
 
 @Component({
-  selector: 'app-contact-section',
+  selector: 'app-founder-section',
   standalone: true,
   imports: [CommonModule, LucideAngularModule],
-  templateUrl: './contact-section.component.html',
-  styleUrl: './contact-section.component.scss',
+  templateUrl: './founder-section.component.html',
+  styleUrl: './founder-section.component.scss',
 })
-export class ContactSectionComponent {}
+export class FounderSectionComponent {}

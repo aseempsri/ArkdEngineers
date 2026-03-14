@@ -26,9 +26,9 @@ import { LucideAngularModule } from 'lucide-angular';
 })
 export class HeroSectionComponent {
   stats = [
-    { icon: 'shield', label: 'Smart Security', value: 'Enterprise' },
-    { icon: 'eye', label: 'CCTV Systems', value: 'Advanced' },
-    { icon: 'fingerprint', label: 'Biometric', value: 'AI-Powered' },
+    { icon: 'award', label: 'Industry Experience', value: '15+ Years' },
+    { icon: 'building-2', label: 'Trusted By', value: 'Gov & Corporate' },
+    { icon: 'shield', label: 'Certified', value: 'Quality Equipment' },
   ] as const;
 
   getStatIconName(stat: (typeof this.stats)[number]) {

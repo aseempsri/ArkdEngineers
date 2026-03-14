@@ -1,0 +1,25 @@
+<section id="why-choose" class="relative py-32">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="text-xs font-bold tracking-[0.3em] uppercase text-accent mb-4 block" style="font-family: 'Orbitron', sans-serif">
+        Why Choose Us
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-black mb-4">
+        Why Choose
+        <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">ARKD Engineers</span>
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      @for (r of reasons; track r.title) {
+        <div class="group p-6 rounded-2xl border border-border bg-card/40 backdrop-blur-sm hover:bg-card/60 hover:border-primary/30 transition-all duration-300">
+          <div class="inline-flex p-3 rounded-xl bg-primary/10 border border-primary/20 mb-4 group-hover:scale-110 transition-transform">
+            <lucide-icon [name]="r.icon" class="w-6 h-6 text-accent block" [size]="24"></lucide-icon>
+          </div>
+          <h3 class="text-lg font-bold text-foreground mb-2" style="font-family: 'Orbitron', sans-serif">{{ r.title }}</h3>
+          <p class="text-sm text-muted-foreground">{{ r.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

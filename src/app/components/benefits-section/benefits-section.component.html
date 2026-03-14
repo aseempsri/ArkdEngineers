@@ -1,0 +1,26 @@
+<section id="benefits" class="relative py-32">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <span class="text-xs font-bold tracking-[0.3em] uppercase text-accent mb-4 block" style="font-family: 'Orbitron', sans-serif">
+          Value Proposition
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-black mb-6 leading-tight">
+          Benefits of Security
+          <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Infrastructure</span>
+        </h2>
+        <p class="text-muted-foreground leading-relaxed mb-8" style="font-family: 'Inter', sans-serif">
+          Investing in robust security infrastructure delivers measurable returns — from risk mitigation to operational efficiency.
+        </p>
+      </div>
+      <div class="space-y-4">
+        @for (b of benefits; track b) {
+          <div class="flex items-center gap-4 p-4 rounded-xl border border-border bg-card/30 hover:bg-card/50 hover:border-primary/20 transition-all">
+            <lucide-icon name="check-circle2" class="w-6 h-6 text-accent flex-shrink-0" [size]="24"></lucide-icon>
+            <span class="text-foreground font-medium" style="font-family: 'Inter', sans-serif">{{ b }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

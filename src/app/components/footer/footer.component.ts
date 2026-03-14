@@ -10,6 +10,6 @@ import { CommonModule } from '@angular/common';
 })
 export class FooterComponent {
   logoUrl = 'assets/arkd_logo.png';
-  navItems = ['Home', 'About', 'Services', 'Solutions', 'Contact'];
+  navItems = ['Home', 'About', 'Founder', 'Services', 'Solutions', 'Contact'];
   currentYear = new Date().getFullYear();
 }

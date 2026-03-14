@@ -25,6 +25,15 @@ import {
   MapPin,
   Phone,
   Mail,
+  Flame,
+  Home,
+  School,
+  Hospital,
+  Radio,
+  Navigation,
+  CheckCircle2,
+  Wrench,
+  Leaf,
 } from 'lucide-angular';
 import { routes } from './app.routes';
 
@@ -57,6 +66,15 @@ export const appConfig: ApplicationConfig = {
         MapPin,
         Phone,
         Mail,
+        Flame,
+        Home,
+        School,
+        Hospital,
+        Radio,
+        Navigation,
+        CheckCircle2,
+        Wrench,
+        Leaf,
       })
     ),
   ],

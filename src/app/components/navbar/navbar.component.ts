@@ -6,6 +6,7 @@ import { LucideAngularModule } from 'lucide-angular';
 const navItems = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
+  { label: 'Founder', href: '#founder' },
   { label: 'Services', href: '#services' },
   { label: 'Solutions', href: '#solutions' },
   { label: 'Contact', href: '#contact' },
