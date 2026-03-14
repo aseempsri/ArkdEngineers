@@ -13,59 +13,67 @@
       </p>
     </div>
 
-    <!-- Bento-style contact grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-      <!-- Call - Featured large card -->
+    <!-- Contact grid: Call left, Email + Website stacked right -->
+    <div class="contact-grid">
+      <!-- Call - Left column, full height -->
       <a
         href="tel:+919766562128"
-        class="group relative md:col-span-2 lg:row-span-2 p-8 rounded-3xl border border-border bg-gradient-to-br from-primary/10 via-card/50 to-accent/5 hover:border-primary/50 transition-all duration-500 overflow-hidden">
+        class="contact-card contact-card-call group">
         <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        <div class="relative">
-          <div class="inline-flex p-4 rounded-2xl bg-primary/20 border border-primary/30 mb-6 group-hover:scale-110 transition-transform">
+        <div class="contact-card-inner contact-call-inner">
+          <div class="contact-icon contact-icon-lg">
             <lucide-icon name="phone" class="w-8 h-8 text-accent block" [size]="32"></lucide-icon>
           </div>
-          <h3 class="text-xl font-bold text-foreground mb-2" style="font-family: 'Orbitron', sans-serif">Call Us</h3>
-          <p class="text-muted-foreground text-sm mb-4">Speak directly with our security experts</p>
-          <p class="text-2xl font-bold text-primary group-hover:text-accent transition-colors">+91 9766562128</p>
-          <p class="text-sm text-muted-foreground mt-1">+91 8329699042</p>
+          <h3 class="contact-title contact-title-lg">Call Us</h3>
+          <p class="contact-desc">Speak directly with our security experts</p>
+          <p class="contact-value contact-value-lg">+91 9766562128</p>
+          <p class="contact-value-alt">+91 8329699042</p>
         </div>
       </a>
 
-      <!-- Email -->
+      <!-- Email - Top right -->
       <a
         href="mailto:info@arkdengineers.com"
-        class="group relative p-6 rounded-2xl border border-border bg-card/40 backdrop-blur-sm hover:bg-card/70 hover:border-primary/30 transition-all duration-300">
-        <lucide-icon name="mail" class="w-6 h-6 text-accent mb-4 group-hover:scale-110 transition-transform block" [size]="24"></lucide-icon>
-        <h3 class="text-sm font-bold text-foreground mb-1" style="font-family: 'Orbitron', sans-serif">Email</h3>
-        <p class="text-sm text-muted-foreground group-hover:text-foreground transition-colors break-all">info&#64;arkdengineers.com</p>
+        class="contact-card contact-card-sm group">
+        <div class="contact-card-inner">
+          <div class="contact-icon contact-icon-lg">
+            <lucide-icon name="mail" class="w-8 h-8 text-accent block" [size]="32"></lucide-icon>
+          </div>
+          <h3 class="contact-title contact-title-lg">Email</h3>
+          <p class="contact-value-sm break-all">info&#64;arkdengineers.com</p>
+        </div>
       </a>
 
-      <!-- Website -->
+      <!-- Website - Below Email -->
       <a
         href="https://www.arkdengineers.com"
         target="_blank"
         rel="noopener"
-        class="group relative p-6 rounded-2xl border border-border bg-card/40 backdrop-blur-sm hover:bg-card/70 hover:border-primary/30 transition-all duration-300">
-        <lucide-icon name="globe" class="w-6 h-6 text-accent mb-4 group-hover:scale-110 transition-transform block" [size]="24"></lucide-icon>
-        <h3 class="text-sm font-bold text-foreground mb-1" style="font-family: 'Orbitron', sans-serif">Website</h3>
-        <p class="text-sm text-muted-foreground group-hover:text-foreground transition-colors">www.arkdengineers.com</p>
+        class="contact-card contact-card-sm group">
+        <div class="contact-card-inner">
+          <div class="contact-icon contact-icon-lg">
+            <lucide-icon name="globe" class="w-8 h-8 text-accent block" [size]="32"></lucide-icon>
+          </div>
+          <h3 class="contact-title contact-title-lg">Website</h3>
+          <p class="contact-value-sm">www.arkdengineers.com</p>
+        </div>
       </a>
 
       <!-- Address - Spans full width on lg -->
-      <div class="lg:col-span-4 p-6 rounded-2xl border border-border bg-card/30 backdrop-blur-sm">
-        <div class="flex flex-col sm:flex-row sm:items-center gap-4">
-          <div class="flex items-center gap-4 flex-1">
-            <div class="p-3 rounded-xl bg-primary/10 border border-primary/20 flex-shrink-0">
+      <div class="contact-card contact-card-address">
+        <div class="contact-address-inner">
+          <div class="contact-address-content">
+            <div class="contact-icon">
               <lucide-icon name="map-pin" class="w-6 h-6 text-accent block" [size]="24"></lucide-icon>
             </div>
-            <div>
-              <h3 class="text-sm font-bold text-foreground mb-1" style="font-family: 'Orbitron', sans-serif">Visit Us</h3>
-              <p class="text-muted-foreground text-sm">Sankalp, Plot No. 24, Bhosale Garden, Hadapsar, Pune – 411028</p>
+            <div class="contact-address-text">
+              <h3 class="contact-title">Visit Us</h3>
+              <p class="contact-value-sm">Sankalp, Plot No. 24, Bhosale Garden, Hadapsar, Pune – 411028</p>
             </div>
           </div>
           <a
             href="mailto:info@arkdengineers.com?subject=Free%20Security%20Consultation%20Request"
-            class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-bold text-sm tracking-wider uppercase hover:bg-primary/90 transition-all shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-0.5 flex-shrink-0"
+            class="contact-cta"
             style="font-family: 'Orbitron', sans-serif">
             Get Free Quote
             <lucide-icon name="arrow-right" [size]="16"></lucide-icon>
