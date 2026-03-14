@@ -11,6 +11,37 @@
       <p class="text-muted-foreground max-w-xl mx-auto">Organizations that trust ARKD for their security needs</p>
     </div>
 
-    <app-logo-carousel [items]="clients" />
+    <!-- Recently Acquired & Proud Clients - side by side text lists -->
+    <div class="clients-lists-grid mb-20">
+      <div class="clients-list-card">
+        <div class="clients-list-header">
+          <span class="clients-list-icon">◆</span>
+          <h3 class="clients-list-title">Recently Acquired Clients</h3>
+        </div>
+        <ul class="clients-list">
+          @for (client of recentlyAcquiredClients; track client.name) {
+            <li class="clients-list-item">{{ client.name }}</li>
+          }
+        </ul>
+      </div>
+      <div class="clients-list-divider"></div>
+      <div class="clients-list-card">
+        <div class="clients-list-header">
+          <span class="clients-list-icon">★</span>
+          <h3 class="clients-list-title">Proud Clients</h3>
+        </div>
+        <ul class="clients-list">
+          @for (client of proudClients; track client.name) {
+            <li class="clients-list-item">{{ client.name }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    <!-- Our Clients - carousel -->
+    <div>
+      <h3 class="text-lg font-bold text-foreground mb-6 text-center" style="font-family: 'Orbitron', sans-serif">Our Clients</h3>
+      <app-logo-carousel [items]="clients" />
+    </div>
   </div>
 </section>

@@ -45,8 +45,30 @@ import { Scene3DComponent } from '../../components/scene3d/scene3d.component';
       <div class="relative z-10">
         <app-navbar />
         <app-hero-section />
+        <!-- Slogan banner -->
+        <div class="relative z-10 py-12 sm:py-16 px-4">
+          <div class="max-w-7xl mx-auto text-center">
+            <p class="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight">
+              <span class="relative inline-block px-8 py-4 rounded-2xl border-2 border-accent/60 bg-card/70 backdrop-blur-md shadow-[0_0_40px_hsl(195_90%_50%_/_0.12)] hover:shadow-[0_0_50px_hsl(195_90%_50%_/_0.2)] transition-all duration-300 hover:border-accent/80">
+                <span class="text-foreground">Your Safety is our Profession</span>
+              </span>
+            </p>
+          </div>
+        </div>
         <div class="relative bg-gradient-to-b from-transparent via-background/80 to-background">
           <app-about-section />
+          <!-- Vision & Core Values banner -->
+          <div class="relative z-10 py-12 sm:py-16 px-4">
+            <div class="max-w-7xl mx-auto text-center">
+              <div class="relative inline-block px-8 sm:px-12 py-8 rounded-2xl border-2 border-accent/60 bg-card/70 backdrop-blur-md shadow-[0_0_40px_hsl(195_90%_50%_/_0.12)] hover:shadow-[0_0_50px_hsl(195_90%_50%_/_0.2)] transition-all duration-300 hover:border-accent/80 max-w-4xl">
+                <p class="text-xs font-bold tracking-[0.2em] uppercase text-accent mb-3" style="font-family: 'Orbitron', sans-serif">Vision</p>
+                <p class="text-base sm:text-lg font-semibold text-foreground leading-relaxed mb-6" style="font-family: 'Inter', sans-serif">Technology changes the world, and makes smarter and safer human living and social development.</p>
+                <div class="h-px bg-border/60 my-6"></div>
+                <p class="text-xs font-bold tracking-[0.2em] uppercase text-accent mb-3" style="font-family: 'Orbitron', sans-serif">Core Values</p>
+                <p class="text-base sm:text-lg font-semibold text-foreground" style="font-family: 'Inter', sans-serif">Responsibility, Integrity, Sustainability, Excellence</p>
+              </div>
+            </div>
+          </div>
           <app-founder-section />
           <app-services-section />
           <app-solutions-section />

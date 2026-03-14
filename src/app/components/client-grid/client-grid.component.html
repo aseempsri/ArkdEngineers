@@ -1,0 +1,21 @@
+<div class="client-grid-block">
+  @if (categoryLabel) {
+    <h3 class="category-label">{{ categoryLabel }}</h3>
+  }
+  <div class="client-grid">
+    @for (item of items; track item.name) {
+      <div class="client-card">
+        <div class="client-logo">
+          <img
+            [src]="getLogoUrl(item)"
+            [alt]="item.name"
+            [hidden]="logoError[item.name]"
+            (error)="logoError[item.name] = true"
+          />
+          <span class="logo-initials" [class.hidden]="!logoError[item.name]">{{ getInitials(item.name) }}</span>
+        </div>
+        <span class="client-name">{{ item.name }}</span>
+      </div>
+    }
+  </div>
+</div>

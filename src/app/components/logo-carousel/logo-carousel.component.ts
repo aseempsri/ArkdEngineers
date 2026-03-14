@@ -16,6 +16,7 @@ export interface LogoItem {
 })
 export class LogoCarouselComponent {
   @Input() items: LogoItem[] = [];
+  logoError: Record<string, boolean> = {};
 
   getInitials(name: string): string {
     const words = name.split(/\s+/).filter(w => w.length > 0);

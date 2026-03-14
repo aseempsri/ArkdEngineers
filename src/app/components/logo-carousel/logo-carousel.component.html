@@ -9,7 +9,12 @@
       @for (item of items; track item.name) {
         <div class="logo-card">
           <div class="logo-fallback">
-            <span class="logo-initials">{{ getInitials(item.name) }}</span>
+            @if (item.logoUrl) {
+              <img [src]="item.logoUrl" [alt]="item.name" class="logo-img" (error)="logoError[item.name]=true" [hidden]="logoError[item.name]" />
+            }
+            @if (!item.logoUrl || logoError[item.name]) {
+              <span class="logo-initials">{{ getInitials(item.name) }}</span>
+            }
             <span class="logo-name">{{ item.name }}</span>
           </div>
         </div>
@@ -19,7 +24,12 @@
       @for (item of items; track item.name) {
         <div class="logo-card">
           <div class="logo-fallback">
-            <span class="logo-initials">{{ getInitials(item.name) }}</span>
+            @if (item.logoUrl) {
+              <img [src]="item.logoUrl" [alt]="item.name" class="logo-img" (error)="logoError[item.name]=true" [hidden]="logoError[item.name]" />
+            }
+            @if (!item.logoUrl || logoError[item.name]) {
+              <span class="logo-initials">{{ getInitials(item.name) }}</span>
+            }
             <span class="logo-name">{{ item.name }}</span>
           </div>
         </div>
@@ -35,7 +45,12 @@
       @for (item of items; track item.name) {
         <div class="logo-card card-alt">
           <div class="logo-fallback">
-            <span class="logo-initials">{{ getInitials(item.name) }}</span>
+            @if (item.logoUrl) {
+              <img [src]="item.logoUrl" [alt]="item.name" class="logo-img" (error)="logoError[item.name]=true" [hidden]="logoError[item.name]" />
+            }
+            @if (!item.logoUrl || logoError[item.name]) {
+              <span class="logo-initials">{{ getInitials(item.name) }}</span>
+            }
             <span class="logo-name">{{ item.name }}</span>
           </div>
         </div>
@@ -45,7 +60,12 @@
       @for (item of items; track item.name) {
         <div class="logo-card card-alt">
           <div class="logo-fallback">
-            <span class="logo-initials">{{ getInitials(item.name) }}</span>
+            @if (item.logoUrl) {
+              <img [src]="item.logoUrl" [alt]="item.name" class="logo-img" (error)="logoError[item.name]=true" [hidden]="logoError[item.name]" />
+            }
+            @if (!item.logoUrl || logoError[item.name]) {
+              <span class="logo-initials">{{ getInitials(item.name) }}</span>
+            }
             <span class="logo-name">{{ item.name }}</span>
           </div>
         </div>

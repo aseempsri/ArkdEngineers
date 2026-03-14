@@ -1,3 +1,133 @@
 :host {
   display: block;
 }
+
+.founder-card {
+  position: relative;
+  border-radius: 1.5rem;
+  border: 1px solid hsl(var(--border) / 0.6);
+  background: hsl(var(--card) / 0.95);
+  backdrop-filter: blur(16px);
+  box-shadow:
+    0 25px 50px -12px rgb(0 0 0 / 0.4),
+    0 0 0 1px hsl(var(--border) / 0.3),
+    inset 0 1px 0 hsl(var(--foreground) / 0.03);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 30px 60px -15px rgb(0 0 0 / 0.5),
+      0 0 0 1px hsl(var(--primary) / 0.2),
+      0 0 60px -10px hsl(var(--accent) / 0.15);
+  }
+}
+
+.founder-accent-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+  opacity: 0.9;
+}
+
+.founder-portrait {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.founder-portrait-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, hsl(var(--primary) / 0.6), hsl(var(--accent) / 0.6));
+  opacity: 0.5;
+  filter: blur(8px);
+  z-index: 0;
+}
+
+.founder-img {
+  position: relative;
+  z-index: 1;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+  border: 3px solid hsl(var(--card));
+  box-shadow: 0 8px 32px rgb(0 0 0 / 0.3);
+}
+
+@media (min-width: 1024px) {
+  .founder-img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+.founder-label {
+  display: block;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: hsl(var(--accent));
+  margin-bottom: 0.5rem;
+}
+
+.founder-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.25rem;
+}
+
+.founder-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 1.25rem;
+}
+
+.founder-bio {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: hsl(var(--foreground) / 0.9);
+  margin-bottom: 1.5rem;
+}
+
+.founder-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 1024px) {
+    justify-content: flex-start;
+  }
+}
+
+.founder-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  border-radius: 9999px;
+  background: hsl(var(--primary) / 0.12);
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--primary) / 0.3);
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: hsl(var(--primary) / 0.2);
+    border-color: hsl(var(--accent) / 0.5);
+    transform: scale(1.02);
+  }
+}
