@@ -1,0 +1,80 @@
+<section id="contact" class="relative py-32">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" appAnimateInView [margin]="'-80px'" (inView)="onInView($event)">
+    @if (inView()) {
+      <div @fadeUp class="text-center mb-16">
+        <span class="text-xs font-bold tracking-[0.3em] uppercase text-accent mb-4 block" style="font-family: 'Orbitron', sans-serif">
+          Contact
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-black mb-4">
+          Get in
+          <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Touch</span>
+        </h2>
+      </div>
+    }
+
+    <div class="grid lg:grid-cols-5 gap-12">
+      <!-- Info -->
+      @if (inView()) {
+        <div @slideInLeft class="lg:col-span-2 space-y-8">
+          <p class="text-muted-foreground leading-relaxed" style="font-family: 'Inter', sans-serif">
+            Ready to secure your premises with cutting-edge technology? Contact us for a free consultation and customized security assessment.
+          </p>
+          @for (item of contactInfo; track item.text) {
+            <div class="flex items-center gap-4">
+              <div class="p-3 rounded-xl bg-primary/10 border border-primary/20">
+                <lucide-icon [name]="getContactIconName(item)" class="w-5 h-5 text-accent block" [size]="20"></lucide-icon>
+              </div>
+              <span class="text-sm text-muted-foreground">{{ item.text }}</span>
+            </div>
+          }
+        </div>
+      }
+
+      <!-- Form -->
+      @if (inView()) {
+        <div @slideInRight class="lg:col-span-3">
+          @if (submitted()) {
+            <div class="p-12 rounded-3xl border border-border bg-card/50 text-center">
+              <div class="text-4xl mb-4">✓</div>
+              <h3 class="text-xl font-bold text-foreground mb-2" style="font-family: 'Orbitron', sans-serif">
+                Message Sent!
+              </h3>
+              <p class="text-muted-foreground">We'll get back to you shortly.</p>
+            </div>
+          } @else {
+            <form
+              (ngSubmit)="onSubmit($event)"
+              class="p-8 rounded-3xl border border-border bg-card/50 backdrop-blur-sm space-y-5">
+              <div class="grid sm:grid-cols-2 gap-5">
+                <input
+                  required
+                  placeholder="Your Name"
+                  class="w-full px-4 py-3.5 rounded-xl bg-secondary/50 border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all" />
+                <input
+                  required
+                  type="email"
+                  placeholder="Email Address"
+                  class="w-full px-4 py-3.5 rounded-xl bg-secondary/50 border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all" />
+              </div>
+              <input
+                placeholder="Subject"
+                class="w-full px-4 py-3.5 rounded-xl bg-secondary/50 border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all" />
+              <textarea
+                required
+                rows="4"
+                placeholder="Tell us about your security needs..."
+                class="w-full px-4 py-3.5 rounded-xl bg-secondary/50 border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all resize-none"></textarea>
+              <button
+                type="submit"
+                class="w-full py-4 rounded-xl bg-primary text-primary-foreground font-bold text-sm tracking-wider uppercase hover:bg-primary/90 transition-all shadow-lg shadow-primary/25 hover:shadow-primary/40 flex items-center justify-center gap-2"
+                style="font-family: 'Orbitron', sans-serif">
+                Send Message
+                <lucide-icon name="send" [size]="16"></lucide-icon>
+              </button>
+            </form>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</section>

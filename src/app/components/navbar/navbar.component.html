@@ -1,0 +1,58 @@
+<nav
+  [class]="'fixed top-0 left-0 right-0 z-50 transition-all duration-500 ' + (scrolled() ? 'bg-background/80 backdrop-blur-xl border-b border-border shadow-lg shadow-primary/5' : 'bg-transparent')"
+  [@navSlide]>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <a href="#home" class="flex items-center gap-3">
+        <img [src]="logoUrl" alt="ARKD Engineers" class="h-10 brightness-0 invert" />
+      </a>
+
+      <!-- Desktop -->
+      <div class="hidden md:flex items-center gap-1">
+        @for (item of navItems; track item.href; let i = $index) {
+          <a
+            [href]="item.href"
+            [@navItem]
+            class="relative px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group">
+            {{ item.label }}
+            <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-accent group-hover:w-3/4 transition-all duration-300 rounded-full"></span>
+          </a>
+        }
+        <a
+          href="#contact"
+          [@navCta]
+          class="ml-4 px-6 py-2.5 text-sm font-semibold rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all shadow-lg shadow-primary/25 hover:shadow-primary/40"
+          style="font-family: 'Orbitron', sans-serif">
+          Get Quote
+        </a>
+      </div>
+
+      <!-- Mobile toggle -->
+      <button (click)="toggleMobile()" class="md:hidden text-foreground p-2">
+        @if (mobileOpen()) {
+          <lucide-icon name="x" [size]="24"></lucide-icon>
+        } @else {
+          <lucide-icon name="menu" [size]="24"></lucide-icon>
+        }
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  @if (mobileOpen()) {
+    <div
+      @mobileMenu
+      class="md:hidden bg-card/95 backdrop-blur-xl border-b border-border overflow-hidden">
+      <div class="px-4 py-4 space-y-1">
+        @for (item of navItems; track item.href) {
+          <a
+            [href]="item.href"
+            (click)="closeMobile()"
+            class="block px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors">
+            {{ item.label }}
+          </a>
+        }
+      </div>
+    </div>
+  }
+</nav>

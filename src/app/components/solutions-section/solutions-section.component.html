@@ -1,0 +1,51 @@
+<section id="solutions" class="relative py-32">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" appAnimateInView [margin]="'-80px'" (inView)="onInView($event)">
+    @if (inView()) {
+      <div @fadeUp class="text-center mb-16">
+        <span class="text-xs font-bold tracking-[0.3em] uppercase text-accent mb-4 block" style="font-family: 'Orbitron', sans-serif">
+          Solutions
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-black mb-4">
+          Built for
+          <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Every Scale</span>
+        </h2>
+      </div>
+    }
+
+    <div class="grid lg:grid-cols-3 gap-8">
+      @for (sol of solutions; track sol.title) {
+        @if (inView()) {
+          <div
+            @cardUp
+            class="group relative rounded-3xl border border-border bg-card/40 backdrop-blur-sm overflow-hidden hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
+            <div class="h-1 bg-gradient-to-r from-primary via-accent to-primary"></div>
+            <div class="p-8">
+              <lucide-icon [name]="getSolutionIconName(sol)" class="w-10 h-10 text-accent mb-6 block" [size]="40"></lucide-icon>
+              <h3 class="text-xl font-bold mb-3 text-foreground" style="font-family: 'Orbitron', sans-serif">
+                {{ sol.title }}
+              </h3>
+              <p class="text-sm text-muted-foreground leading-relaxed mb-6" style="font-family: 'Inter', sans-serif">
+                {{ sol.description }}
+              </p>
+              <div class="space-y-2 mb-8">
+                @for (f of sol.features; track f) {
+                  <div class="flex items-center gap-2 text-sm text-muted-foreground">
+                    <div class="w-1.5 h-1.5 rounded-full bg-accent"></div>
+                    {{ f }}
+                  </div>
+                }
+              </div>
+              <a
+                href="#contact"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-foreground transition-colors group/link"
+                style="font-family: 'Orbitron', sans-serif">
+                Learn More
+                <lucide-icon name="arrow-right" class="w-4 h-4 group-hover/link:translate-x-1 transition-transform inline-block" [size]="16"></lucide-icon>
+              </a>
+            </div>
+          </div>
+        }
+      }
+    </div>
+  </div>
+</section>

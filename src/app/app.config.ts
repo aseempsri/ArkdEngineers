@@ -1,0 +1,63 @@
+import { ApplicationConfig, provideZoneChangeDetection, importProvidersFrom } from '@angular/core';
+import { provideRouter, withInMemoryScrolling } from '@angular/router';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import {
+  LucideAngularModule,
+  Menu,
+  X,
+  ChevronDown,
+  Shield,
+  Eye,
+  Fingerprint,
+  Building2,
+  Users,
+  Globe,
+  Award,
+  Camera,
+  DoorOpen,
+  Monitor,
+  Cpu,
+  Building,
+  Landmark,
+  User,
+  ArrowRight,
+  Send,
+  MapPin,
+  Phone,
+  Mail,
+} from 'lucide-angular';
+import { routes } from './app.routes';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes, withInMemoryScrolling({ anchorScrolling: 'enabled', scrollPositionRestoration: 'top' })),
+    provideAnimations(),
+    importProvidersFrom(
+      LucideAngularModule.pick({
+        Menu,
+        X,
+        ChevronDown,
+        Shield,
+        Eye,
+        Fingerprint,
+        Building2,
+        Users,
+        Globe,
+        Award,
+        Camera,
+        DoorOpen,
+        Monitor,
+        Cpu,
+        Building,
+        Landmark,
+        User,
+        ArrowRight,
+        Send,
+        MapPin,
+        Phone,
+        Mail,
+      })
+    ),
+  ],
+};
