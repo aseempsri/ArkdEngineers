@@ -6,7 +6,7 @@ const brands: LogoItem[] = [
   { name: 'Optex', logoUrl: 'assets/optex.png' },
   { name: 'Samsung', logoUrl: 'assets/samsung.png' },
   { name: 'Securico', logoUrl: 'assets/securico.png' },
-  { name: 'Panasonic', logoUrl: 'assets/Panasonic.png' },
+  { name: 'Panasonic', logoUrl: 'assets/pana.png' },
   { name: 'Honeywell', logoUrl: 'assets/honeywell.png' },
   { name: 'Bosch', logoUrl: 'assets/bosch.png' },
   { name: 'Axis Communications', logoUrl: 'assets/axis communication.png' },
