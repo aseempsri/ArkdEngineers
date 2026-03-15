@@ -38,6 +38,11 @@ jobs:
       - name: Add 404.html for SPA routing
         run: cp dist/arkd-angular/browser/index.html dist/arkd-angular/browser/404.html
 
+      - name: Inject cache buster
+        run: |
+          BUILD_ID="${{ github.sha }}"
+          sed -i "s/BUILD_ID/$BUILD_ID/g" dist/arkd-angular/browser/index.html dist/arkd-angular/browser/404.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
         with:

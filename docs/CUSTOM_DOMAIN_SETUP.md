@@ -17,7 +17,7 @@ GitHub will automatically redirect `www.arkdengineers.com` ↔ `arkdengineers.co
 
 ## 2. DNS Configuration (at your domain registrar)
 
-Add these records where you manage DNS for arkdengineers.com (e.g., GoDaddy, Namecheap, Cloudflare):
+Add these records where you manage DNS for arkdengineers.com (e.g., GoDaddy, Namecheap):
 
 ### A Records (for apex domain: arkdengineers.com)
 
@@ -46,3 +46,12 @@ Once DNS propagates:
 - Visit https://arkdengineers.com
 - Visit https://www.arkdengineers.com
 - Both should load with a valid HTTPS certificate.
+
+---
+
+## HTTPS Redirect
+
+The site includes a client-side redirect that sends all traffic to **https://arkdengineers.com**:
+- `http://arkdengineers.com` → `https://arkdengineers.com`
+- `https://www.arkdengineers.com` → `https://arkdengineers.com`
+- `http://www.arkdengineers.com` → `https://arkdengineers.com`
