@@ -2,11 +2,11 @@
   <div class="carousel-mask carousel-mask-left"></div>
   <div class="carousel-mask carousel-mask-right"></div>
 
-  <!-- Track 1: Scrolls left -->
+  <!-- Track 1: Scrolls left - first half of items -->
   <div class="carousel-track">
     <div class="carousel-slider">
     <div class="carousel-inner">
-      @for (item of items; track item.name) {
+      @for (item of track1Items; track item.name) {
         <div class="logo-card">
           <div class="logo-fallback">
             @if (item.logoUrl) {
@@ -21,7 +21,7 @@
       }
     </div>
     <div class="carousel-inner" aria-hidden="true">
-      @for (item of items; track item.name) {
+      @for (item of track1Items; track item.name) {
         <div class="logo-card">
           <div class="logo-fallback">
             @if (item.logoUrl) {
@@ -38,11 +38,11 @@
     </div>
   </div>
 
-  <!-- Track 2: Scrolls right -->
+  <!-- Track 2: Scrolls right - second half of items -->
   <div class="carousel-track track-reverse">
     <div class="carousel-slider">
     <div class="carousel-inner">
-      @for (item of items; track item.name) {
+      @for (item of track2Items; track item.name) {
         <div class="logo-card card-alt">
           <div class="logo-fallback">
             @if (item.logoUrl) {
@@ -57,7 +57,7 @@
       }
     </div>
     <div class="carousel-inner" aria-hidden="true">
-      @for (item of items; track item.name) {
+      @for (item of track2Items; track item.name) {
         <div class="logo-card card-alt">
           <div class="logo-fallback">
             @if (item.logoUrl) {

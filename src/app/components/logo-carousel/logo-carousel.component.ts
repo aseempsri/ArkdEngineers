@@ -18,6 +18,16 @@ export class LogoCarouselComponent {
   @Input() items: LogoItem[] = [];
   logoError: Record<string, boolean> = {};
 
+  get track1Items(): LogoItem[] {
+    const mid = Math.ceil(this.items.length / 2);
+    return this.items.slice(0, mid);
+  }
+
+  get track2Items(): LogoItem[] {
+    const mid = Math.ceil(this.items.length / 2);
+    return this.items.slice(mid);
+  }
+
   getInitials(name: string): string {
     const words = name.split(/\s+/).filter(w => w.length > 0);
     if (words.length >= 2) {
