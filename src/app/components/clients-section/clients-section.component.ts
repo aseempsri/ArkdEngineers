@@ -28,19 +28,19 @@ const proudClients: LogoItem[] = [
 ];
 
 const clients: LogoItem[] = [
-  { name: 'Kool Homes', logoUrl: 'https://www.google.com/s2/favicons?domain=koolhomes.in&sz=128' },
-  { name: 'Amanora Town Centre', logoUrl: 'https://www.google.com/s2/favicons?domain=amanoramall.com&sz=128' },
-  { name: 'Phoenix MarketCity', logoUrl: 'https://www.google.com/s2/favicons?domain=phoenixmarketcity.com&sz=128' },
-  { name: 'LIC', logoUrl: 'https://www.google.com/s2/favicons?domain=licindia.in&sz=128' },
-  { name: 'Ashok Leyland', logoUrl: 'https://www.google.com/s2/favicons?domain=ashokleyland.com&sz=128' },
-  { name: 'Nyati Group', logoUrl: 'https://www.google.com/s2/favicons?domain=nyatigroup.com&sz=128' },
-  { name: 'Frankfinn Institute', logoUrl: 'https://www.google.com/s2/favicons?domain=frankfinn.com&sz=128' },
-  { name: 'TEA VILLA CAFÉ', logoUrl: 'https://www.google.com/s2/favicons?domain=teavillacafe.com&sz=128' },
-  { name: 'Royal Properties', logoUrl: 'https://www.google.com/s2/favicons?domain=royalpropertiesindia.com&sz=128' },
-  { name: 'DigitalZone', logoUrl: 'https://www.google.com/s2/favicons?domain=digitalzone.in&sz=128' },
-  { name: 'BIOENABLE', logoUrl: 'https://www.google.com/s2/favicons?domain=bioenable.com&sz=128' },
-  { name: 'PanditAuto', logoUrl: 'https://www.google.com/s2/favicons?domain=panditauto.com&sz=128' },
-  { name: 'Toscana Homes', logoUrl: 'https://www.google.com/s2/favicons?domain=toscanahomes.com&sz=128' },
+  { name: 'Kool Homes', logoUrl: 'assets/kool homes.png' },
+  { name: 'Amanora Town Centre', logoUrl: 'assets/amanora town center.png' },
+  { name: 'Phoenix MarketCity', logoUrl: 'assets/phoenix market city.png' },
+  { name: 'LIC', logoUrl: 'assets/LIC.png' },
+  { name: 'Ashok Leyland', logoUrl: 'assets/ashok leyland.png' },
+  { name: 'Nyati Group', logoUrl: 'assets/nyati.png' },
+  { name: 'Frankfinn Institute', logoUrl: 'assets/frankfinn.png' },
+  { name: 'TEA VILLA CAFÉ', logoUrl: 'assets/Tea Villa cage.png' },
+  { name: 'Royal Properties', logoUrl: 'assets/royal properties.png' },
+  { name: 'DigitalZone', logoUrl: 'assets/digital zone.png' },
+  { name: 'BIOENABLE', logoUrl: 'assets/BIOENABLE.png' },
+  { name: 'PanditAuto', logoUrl: 'assets/Pandit auto.png' },
+  { name: 'Toscana Homes', logoUrl: 'assets/toscana.png' },
 ];
 
 @Component({
