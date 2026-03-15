@@ -51,4 +51,28 @@ Once DNS propagates:
 
 ## HTTPS
 
-Enable **Enforce HTTPS** in GitHub repo Settings → Pages. GitHub will redirect HTTP to HTTPS at the server level. For www ↔ apex redirects, configure at your domain registrar if needed.
+Enable **Enforce HTTPS** in GitHub repo Settings → Pages. GitHub will redirect HTTP to HTTPS at the server level.
+
+---
+
+## Troubleshooting: apex shows "Launching soon" (GoDaddy parking page)
+
+If **https://arkdengineers.com** shows GoDaddy's "Launching soon" page but **https://www.arkdengineers.com** works, the apex domain (@) is not pointing to GitHub.
+
+### Fix in GoDaddy
+
+1. Go to [GoDaddy DNS Management](https://dcc.godaddy.com/) → select **arkdengineers.com**
+2. Under **DNS Records**, check the **A** records for `@`:
+   - **Delete** any A record pointing to GoDaddy parking IPs (e.g. `184.168.221.xx` or similar)
+   - **Add** these 4 A records if missing:
+
+   | Type | Name | Value | TTL |
+   |------|------|-------|-----|
+   | A | @ | 185.199.108.153 | 600 |
+   | A | @ | 185.199.109.153 | 600 |
+   | A | @ | 185.199.110.153 | 600 |
+   | A | @ | 185.199.111.153 | 600 |
+
+3. **Save** and wait 5–30 minutes for DNS to propagate
+4. In GitHub repo **Settings** → **Pages** → **Custom domain**, ensure it shows `arkdengineers.com` (no www)
+5. After DNS propagates, GitHub will provision an SSL certificate for the apex domain
