@@ -49,9 +49,6 @@ Once DNS propagates:
 
 ---
 
-## HTTPS Redirect
+## HTTPS
 
-The site includes a client-side redirect that sends all traffic to **https://arkdengineers.com**:
-- `http://arkdengineers.com` → `https://arkdengineers.com`
-- `https://www.arkdengineers.com` → `https://arkdengineers.com`
-- `http://www.arkdengineers.com` → `https://arkdengineers.com`
+Enable **Enforce HTTPS** in GitHub repo Settings → Pages. GitHub will redirect HTTP to HTTPS at the server level. For www ↔ apex redirects, configure at your domain registrar if needed.
