@@ -18,7 +18,7 @@ const recentlyAcquiredClients: LogoItem[] = [
 ];
 
 const proudClients: LogoItem[] = [
-  { name: 'ISTRO' },
+  { name: 'ISRO' },
   { name: 'AFMC', logoUrl: 'https://www.google.com/s2/favicons?domain=afmc.gov.in&sz=128' },
   { name: 'Cantonment Boards' },
   { name: 'Ammunition Factory' },
