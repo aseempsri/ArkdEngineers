@@ -18,8 +18,8 @@
   <script>
     (function(){
       var h=location.hostname,p=location.pathname+location.search+location.hash;
-      if(location.protocol!=='https:'||h==='www.arkdengineers.com'){
-        location.replace('https://www.arkdengineers.com'+p);
+      if((h==='arkdengineers.com'||h==='www.arkdengineers.com')&&(location.protocol!=='https:'||h==='www.arkdengineers.com')){
+        location.replace('https://arkdengineers.com'+p);
       }
     })();
   </script>
