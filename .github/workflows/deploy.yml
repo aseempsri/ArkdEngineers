@@ -30,7 +30,13 @@ jobs:
         run: npm ci
 
       - name: Build Angular app
-        run: npm run build -- --base-href /ArkdEngineers/
+        run: npm run build -- --base-href /
+
+      - name: Add CNAME for custom domain
+        run: echo "arkdengineers.com" > dist/arkd-angular/browser/CNAME
+
+      - name: Add 404.html for SPA routing
+        run: cp dist/arkd-angular/browser/index.html dist/arkd-angular/browser/404.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
