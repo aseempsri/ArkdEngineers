@@ -28,6 +28,7 @@ const proudClients: LogoItem[] = [
 ];
 
 const clients: LogoItem[] = [
+  { name: 'Ojasvit', logoUrl: 'assets/ojasvit.png' },
   { name: 'Kool Homes', logoUrl: 'assets/kool homes.png' },
   { name: 'Amanora Town Centre', logoUrl: 'assets/amanora town center.png' },
   { name: 'Phoenix MarketCity', logoUrl: 'assets/phoenix market city.png' },
