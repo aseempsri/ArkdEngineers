@@ -2,33 +2,33 @@
   [class]="'fixed top-0 left-0 right-0 z-50 transition-all duration-500 ' + (scrolled() ? 'bg-background/80 backdrop-blur-xl border-b border-border shadow-lg shadow-primary/5' : 'bg-transparent')"
   [@navSlide]>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-20">
-      <a href="#home" class="flex items-center gap-3">
-        <img [src]="logoUrl" alt="ARKD Engineers" class="h-10 brightness-0 invert" />
+    <div class="flex items-center justify-between min-h-20 h-20 shrink-0 gap-4">
+      <a href="/#home" class="flex items-center gap-3 shrink-0">
+        <img [src]="logoUrl" alt="ARKD Engineers" class="h-9 nav:h-10 brightness-0 invert" />
       </a>
 
-      <!-- Desktop -->
-      <div class="hidden md:flex items-center gap-1">
+      <!-- Desktop nav - only at nav (1200px+) to avoid overlap at 150% zoom -->
+      <div class="hidden nav:flex items-center gap-0.5 2xl:gap-2 flex-wrap justify-end">
         @for (item of navItems; track item.href; let i = $index) {
           <a
             [href]="item.href"
             [@navItem]
-            class="relative px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group">
+            class="relative px-2 nav:px-3 2xl:px-4 py-2 text-xs nav:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group whitespace-nowrap">
             {{ item.label }}
             <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-accent group-hover:w-3/4 transition-all duration-300 rounded-full"></span>
           </a>
         }
         <a
-          href="#contact"
+          href="/#contact"
           [@navCta]
-          class="ml-4 px-6 py-2.5 text-sm font-semibold rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all shadow-lg shadow-primary/25 hover:shadow-primary/40"
+          class="ml-2 nav:ml-4 px-4 nav:px-6 py-2 nav:py-2.5 text-xs nav:text-sm font-semibold rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all shadow-lg shadow-primary/25 hover:shadow-primary/40 shrink-0"
           style="font-family: 'Orbitron', sans-serif">
           Get Quote
         </a>
       </div>
 
-      <!-- Mobile toggle -->
-      <button (click)="toggleMobile()" class="md:hidden text-foreground p-2">
+      <!-- Mobile/tablet toggle - shows below nav (1200px) for zoom-friendly layout -->
+      <button (click)="toggleMobile()" class="nav:hidden text-foreground p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-secondary/50 transition-colors" aria-label="Toggle menu">
         @if (mobileOpen()) {
           <lucide-icon name="x" [size]="24"></lucide-icon>
         } @else {
@@ -38,11 +38,11 @@
     </div>
   </div>
 
-  <!-- Mobile menu -->
+  <!-- Mobile/tablet menu -->
   @if (mobileOpen()) {
     <div
       @mobileMenu
-      class="md:hidden bg-card/95 backdrop-blur-xl border-b border-border overflow-hidden">
+      class="nav:hidden bg-card/95 backdrop-blur-xl border-b border-border overflow-hidden">
       <div class="px-4 py-4 space-y-1">
         @for (item of navItems; track item.href) {
           <a
@@ -52,6 +52,13 @@
             {{ item.label }}
           </a>
         }
+        <a
+          href="/#contact"
+          (click)="closeMobile()"
+          class="block mx-4 mt-4 mb-2 px-6 py-3.5 text-center text-sm font-semibold rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all"
+          style="font-family: 'Orbitron', sans-serif">
+          Get Quote
+        </a>
       </div>
     </div>
   }

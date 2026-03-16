@@ -34,6 +34,9 @@ import {
   CheckCircle2,
   Wrench,
   Leaf,
+  Briefcase,
+  Wifi,
+  Headphones,
 } from 'lucide-angular';
 import { routes } from './app.routes';
 
@@ -75,6 +78,9 @@ export const appConfig: ApplicationConfig = {
         CheckCircle2,
         Wrench,
         Leaf,
+        Briefcase,
+        Wifi,
+        Headphones,
       })
     ),
   ],

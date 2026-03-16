@@ -69,22 +69,12 @@
   flex: 1;
   width: 100%;
   gap: 0;
-
-  @media (min-width: 768px) {
-    align-items: flex-start;
-    text-align: left;
-  }
 }
 
 .contact-call-inner {
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   text-align: center;
-
-  @media (min-width: 768px) {
-    align-items: flex-start;
-    text-align: left;
-  }
 }
 
 .contact-icon {
@@ -162,6 +152,15 @@
   font-size: 0.8125rem;
   color: hsl(var(--muted-foreground));
   margin-top: 0.125rem;
+}
+
+.contact-value-primary {
+  color: hsl(var(--primary)) !important;
+  font-weight: 600;
+
+  .contact-card:hover & {
+    color: hsl(var(--accent)) !important;
+  }
 }
 
 .contact-address-inner {

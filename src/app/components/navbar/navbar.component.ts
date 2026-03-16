@@ -4,12 +4,12 @@ import { trigger, transition, style, animate } from '@angular/animations';
 import { LucideAngularModule } from 'lucide-angular';
 
 const navItems = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Founder', href: '#founder' },
-  { label: 'Services', href: '#services' },
-  { label: 'Solutions', href: '#solutions' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/#home' },
+  { label: 'About', href: '/#about' },
+  { label: 'Founder', href: '/#founder' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Solutions', href: '/#solutions' },
+  { label: 'Careers', href: '/careers' },
 ];
 
 @Component({

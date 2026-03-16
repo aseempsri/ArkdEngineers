@@ -13,6 +13,9 @@ module.exports = {
       },
     },
     extend: {
+      screens: {
+        nav: "1200px", // Mobile menu below this - zoom-friendly (150% on 1800px = 1200px)
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
